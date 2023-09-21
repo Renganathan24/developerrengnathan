@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Song</title>
+    <style>
+        .btn{
+            padding: 10px;
+            background-color: purple;
+            margin: 10px;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="song1" src="autio/song1.mp3"></audio>
+    <audio id="song2" src="autio/song2.mp3"></audio>
+    <audio id="song3" src="autio/song3.mp3.mp3"></audio>
+    <audio id="song4" src="autio/song4.mp3.mp3"></audio>
+    <audio id="song5" src="autio/song5.mp3.mp3"></audio>
+
+    <script>
+        const sounds=['song1','song2','song3','song4','song5'];
+        sounds.forEach(sound =>{
+            const btn=document.createElement('button');
+            btn.classList.add('btn');
+            btn.innerText=sound;
+            btn.addEventListener('click',()=>{
+                playstop();
+                document.getElementById(sound).play();
+            });
+           
+            document.body.appendChild(btn);
+           
+        });
+        function playstop(){
+           sounds.forEach(sound =>{
+               document.getElementById(sound).pause();
+           })
+        }
+
+    </script>
+</body>
+</html>
